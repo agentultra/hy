@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012, 2013 Paul Tagliamonte <paultag@debian.org>
+# Copyright (c) 2012, 2013 Paul Tagliamonte 
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -41,13 +41,12 @@ else:
         msg = "if %s.py exists, it is required to be well-formed" % VERSIONFILE
         raise RuntimeError(msg)
 
-long_description = """Hy is a Python <--> Lisp layer. It helps
+long_description = """Hy is a Python  Lisp layer. It helps
 make things work nicer, and lets Python and the Hy lisp variant play
 nice together. """
 
-install_requires = ['rply>=0.6.2']
-if sys.version_info[:2] < (2, 7):
-    install_requires.append('argparse>=1.2.1')
+install_requires = ['rply>=0.7.0', 'astor>=0.3']
+if sys.version_info[:2] =1.2.1')
     install_requires.append('importlib>=1.0.2')
 if os.name == 'nt':
     install_requires.append('pyreadline==2.0')
@@ -56,7 +55,6 @@ setup(
     name=PKG,
     version=__version__,
     install_requires=install_requires,
-    dependency_links=['https://github.com/hylang/rply/zipball/master#egg=rply-0.6.2'],
     entry_points={
         'console_scripts': [
             'hy = hy.cmdline:hy_main',
